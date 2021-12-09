@@ -1,0 +1,113 @@
+.navigation{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+    padding-right: 65px;
+    padding-left: 65px;
+}
+
+.nav-title {
+    color: #0d6efd;
+}
+
+.nav-div {
+    display: flex;
+    gap: 30px;
+}
+
+.a-register, .a-login{
+    text-decoration: none;
+    border: 1px solid;
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+.add-a-book{
+    text-decoration: none;
+    border: 1px solid;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 7px;
+    position: absolute;
+}
+
+#add-book-new{
+    width:160px;
+    text-decoration: none;
+    border: 1px solid;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 7px;
+    position: absolute;
+}
+
+.main-welcome {
+    padding-left: 65px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.main-div {
+    display: flex;
+    padding-left: 65px;
+    justify-content: center;
+    gap: 45px;
+    padding-top: 30px;
+}
+
+.registration-form{
+    border: 1px solid black;
+    margin-top: 50px;
+}
+
+.signup-h3{
+    text-align: center;
+}
+
+.main-reading-list{
+    text-align: center;
+    padding-top: 40px;
+}
+
+.plus-div{
+    padding-left: 90%;
+}
+
+select{
+    height: 38px;
+}
+
+#create-book{
+    gap: 15px;
+    justify-content: center;
+}
+
+#textarea{
+    margin-top: 10px;
+    margin-bottom: 0px;
+    height: 230px;
+    width: 900px;
+}
+
+.txtarea{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.noteslabel{
+    padding-top: 55px;
+    text-align: center;
+}
+
+.add-div {
+    padding-left: 45%;
+    padding-top: 40px;
+}

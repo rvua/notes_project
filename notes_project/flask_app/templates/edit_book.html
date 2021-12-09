@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Edit Notes</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <nav class="navigation d-flex">
+        <h3 class="nav-title">simplenote.com</h3>
+        <div class="nav-div">
+            <a href="/logout" class="a-login">Logout</a>
+        </div>
+    </nav>
+    <div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="color:red">{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    <form action="/update_book/{{book.id}}" method="POST">
+        <div id="create-book" class="registration-form p-5 col-5 mx-auto rounded d-flex">
+            <div>
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" name="title" value="{{book.title}}" class="form-control">
+            </div>
+            <div>
+                <label for="author" class="form-label">Author:</label>
+                <input type="text" name="author" value="{{book.author}}" class="form-control">
+            </div>
+            <div>
+                <label for="category" class="form-label">Category:</label>
+                <select name="category" class="form-control">
+                    <option value="{{book.category}}">Philosophy</option>
+                    <option value="{{book.category}}">Business</option>
+                    <option value="{{book.category}}">Computer Science</option>
+                    <option value="{{book.category}}">Psychology</option>
+                    <option value="{{book.category}}">Self-Improvement</option>
+                    <option value="{{book.category}}">Physics</option>
+                    <option value="{{book.category}}">Classics</option>
+                    <option value="{{book.category}}">Science</option>
+                    <option value="{{book.category}}">Economics</option>
+                    <option value="{{book.category}}">Investing</option>
+                </select>
+            </div>
+        </div>
+        <div class="txtarea">
+            <label for="note" class="noteslabel">Notes:</label>
+            <textarea name="note" cols="30" rows="10" class="form-control" id="textarea">{{book.note}}</textarea>
+        </div>
+        <div class="add-div">
+            <button type="submit" id="add-book-new" class="btn btn-success">Update</button>
+        </div>
+    </form>
+</body>
+</html>

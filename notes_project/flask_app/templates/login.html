@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Log in</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <nav class="navigation">
+        <h3 class="nav-title">simplenote.com</h3>
+        <div class="nav-div">
+            <a href="/" class="a-login">Home</a>
+        </div>
+    </nav>
+    <form action="/login" method="POST" class="registration-form p-5 col-5 mx-auto rounded">
+        <h3 class="signup-h3">Log In</h3>
+        {% with messages = get_flashed_messages(category_filter=['login']) %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="color:red">{{message}}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input type="text" name="email" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input type="password" name="password" class="form-control">
+        </div>
+        <input type="submit" value="Login" class="btn btn-success">
+    </form>
+</body>
+</html>
